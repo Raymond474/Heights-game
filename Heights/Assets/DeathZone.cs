@@ -11,7 +11,7 @@ public class DeathZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //gameOver.Setup(collision);
+        gameOver.Setup(collision);
         /*
         if (!easyMode)
         {
