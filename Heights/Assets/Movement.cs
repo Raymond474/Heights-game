@@ -5,74 +5,138 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public GameObject player;
-    public float horizontalMovement;
+    public static float horizontalMovement;
+    public static float verticalMovement;
     private bool left;
     private bool right;
+    private bool up;
+    private bool down;
     private float playerX;
     private float playerY;
     private float playerZ;
     private Vector3 position = new Vector3();
     private Quaternion quaternion = new Quaternion(0, 0, 0, 0);
 
+    private void Start()
+    {
+        horizontalMovement = 6;
+        verticalMovement = 1;
+    }
+
     void Update()
     {
-        //float horizontalInt = Input.GetAxisRaw("Horizontal");
-        /*
-        float horizontalInt = Input.GetAxisRaw("Horizontal");
-
-        if (horizontalInt == -1)
-        {
-            Debug.Log("left");
-        }
-        else if (horizontalInt == 1)
-        {
-            Debug.Log("right");
-            //right = true;
-        }
-       
-        
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.X))//change this to a button
         {
             right = true;
         }
-        else if (Input.GetKeyUp(KeyCode.D))
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Z))//change this to a button
         {
-            right = false;
+            left = true;
+        }
+        /*
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))//change this to a button only allow at certain spots to prevent phasing
+        {
+            up = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//change this to a button
+        {
+            down = true;
         }
         */
-
-        if (Input.GetKeyDown(KeyCode.D))//change this to a button
-        {
-            right = true;
-        }
     }
 
     private void FixedUpdate()
     {
+        if (player.GetComponent<Rigidbody2D>().velocity.magnitude > DeathModel.maxFallSpeed)
+        {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector3(DeathModel.horiGravMag, DeathModel.vertGravMag);
+        }
 
         if (right)
         {
             moveRight();
         }
+        if (left)
+        {
+            moveLeft();
+        }
+        if (up)
+        {
+            moveUp();
+        }
+        if (down)
+        {
+            moveDown();
+        }
     }
 
     private void moveRight()
     {
-        Debug.Log("move");
-        float playerX = player.transform.localPosition.x;//fix
-        float playerY = player.transform.localPosition.y;
-        float playerZ = player.transform.localPosition.z;
+        playerX = player.transform.localPosition.x;
+        playerY = player.transform.localPosition.y;
+        playerZ = player.transform.localPosition.z;
 
-        playerX += 2;
+        playerX += horizontalMovement;
 
-        Vector3 position = new Vector3(playerX, playerY, playerZ);
-        Quaternion quaternion = new Quaternion(0, 0, 0, 0);
+        position = new Vector3(playerX, playerY, playerZ);
+        quaternion = new Quaternion(0, 0, 0, 0);
         player.transform.SetPositionAndRotation(position, quaternion);
 
         position.x = player.transform.localPosition.x;
         player.transform.SetPositionAndRotation(position, quaternion);
         right = false;
-        Debug.Log("moved");
     }
-    //make camera follow player
+
+    private void moveLeft()
+    {
+        playerX = player.transform.localPosition.x;
+        playerY = player.transform.localPosition.y;
+        playerZ = player.transform.localPosition.z;
+
+        playerX -= horizontalMovement;
+
+        position = new Vector3(playerX, playerY, playerZ);
+        quaternion = new Quaternion(0, 0, 0, 0);
+        player.transform.SetPositionAndRotation(position, quaternion);
+
+        position.x = player.transform.localPosition.x;
+        player.transform.SetPositionAndRotation(position, quaternion);
+        left = false;
+    }
+
+    private void moveUp()
+    {
+        playerX = player.transform.localPosition.x;
+        playerY = player.transform.localPosition.y;
+        playerZ = player.transform.localPosition.z;
+
+        playerY += verticalMovement;
+
+        position = new Vector3(playerX, playerY, playerZ);
+        quaternion = new Quaternion(0, 0, 0, 0);
+        player.transform.SetPositionAndRotation(position, quaternion);
+
+        position.y = player.transform.localPosition.y;
+        player.transform.SetPositionAndRotation(position, quaternion);
+        up = false;
+    }
+
+    private void moveDown()//if player moves down on spawn platform places them out of position for rest of the map
+    {
+        playerX = player.transform.localPosition.x;
+        playerY = player.transform.localPosition.y;
+        playerZ = player.transform.localPosition.z;
+
+        playerY -= verticalMovement;
+
+        position = new Vector3(playerX, playerY, playerZ);
+        quaternion = new Quaternion(0, 0, 0, 0);
+        player.transform.SetPositionAndRotation(position, quaternion);
+
+        position.y = player.transform.localPosition.y;
+        player.transform.SetPositionAndRotation(position, quaternion);
+        down = false;
+    }
 }
