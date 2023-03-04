@@ -273,7 +273,7 @@ TextureImporter:
       213: 21300178
     second: brickWall_89
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -294,6 +294,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -332,9 +333,34 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2248,6 +2274,97 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      brickWall_20: 21300040
+      brickWall_40: 21300080
+      brickWall_16: 21300032
+      brickWall_18: 21300036
+      brickWall_81: 21300162
+      brickWall_75: 21300150
+      brickWall_62: 21300124
+      brickWall_61: 21300122
+      brickWall_63: 21300126
+      brickWall_21: 21300042
+      brickWall_82: 21300164
+      brickWall_31: 21300062
+      brickWall_50: 21300100
+      brickWall_36: 21300072
+      brickWall_4: 21300008
+      brickWall_25: 21300050
+      brickWall_34: 21300068
+      brickWall_2: 21300004
+      brickWall_73: 21300146
+      brickWall_87: 21300174
+      brickWall_0: 21300000
+      brickWall_13: 21300026
+      brickWall_32: 21300064
+      brickWall_41: 21300082
+      brickWall_39: 21300078
+      brickWall_77: 21300154
+      brickWall_64: 21300128
+      brickWall_19: 21300038
+      brickWall_37: 21300074
+      brickWall_29: 21300058
+      brickWall_67: 21300134
+      brickWall_28: 21300056
+      brickWall_66: 21300132
+      brickWall_59: 21300118
+      brickWall_3: 21300006
+      brickWall_51: 21300102
+      brickWall_57: 21300114
+      brickWall_80: 21300160
+      brickWall_52: 21300104
+      brickWall_24: 21300048
+      brickWall_1: 21300002
+      brickWall_15: 21300030
+      brickWall_60: 21300120
+      brickWall_11: 21300022
+      brickWall_72: 21300144
+      brickWall_7: 21300014
+      brickWall_53: 21300106
+      brickWall_44: 21300088
+      brickWall_84: 21300168
+      brickWall_88: 21300176
+      brickWall_23: 21300046
+      brickWall_76: 21300152
+      brickWall_14: 21300028
+      brickWall_43: 21300086
+      brickWall_5: 21300010
+      brickWall_48: 21300096
+      brickWall_46: 21300092
+      brickWall_79: 21300158
+      brickWall_6: 21300012
+      brickWall_45: 21300090
+      brickWall_9: 21300018
+      brickWall_17: 21300034
+      brickWall_30: 21300060
+      brickWall_65: 21300130
+      brickWall_89: 21300178
+      brickWall_56: 21300112
+      brickWall_54: 21300108
+      brickWall_33: 21300066
+      brickWall_69: 21300138
+      brickWall_22: 21300044
+      brickWall_8: 21300016
+      brickWall_38: 21300076
+      brickWall_78: 21300156
+      brickWall_85: 21300170
+      brickWall_12: 21300024
+      brickWall_26: 21300052
+      brickWall_47: 21300094
+      brickWall_86: 21300172
+      brickWall_71: 21300142
+      brickWall_70: 21300140
+      brickWall_55: 21300110
+      brickWall_27: 21300054
+      brickWall_68: 21300136
+      brickWall_49: 21300098
+      brickWall_10: 21300020
+      brickWall_74: 21300148
+      brickWall_42: 21300084
+      brickWall_58: 21300116
+      brickWall_83: 21300166
+      brickWall_35: 21300070
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
